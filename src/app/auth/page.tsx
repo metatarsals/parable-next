@@ -30,58 +30,65 @@ export default function AuthPage() {
       if (result.error) throw result.error; // Handle errors
 
       // 🔹 Redirect to home/dashboard after successful auth
-      router.push("/");
+      router.push("/upload");
     } catch (err: any) {
       setError(err.message || "Something went wrong.");
     }
   };
 
   return (
-    <div>
-      <GradientBackgroundFuller />
-      <div className="flex items-center h-screen justify-center p-6 tracking-tighter">
-        <div className="flex flex-col items-center">
-          <h1 className="text-6xl font-semibold mb-4 drop-shadow-[0_0_8px_rgba(138,43,226,0.6)]">
-            {isLogin ? "Enter Parable." : "Join Parable."}
-          </h1>
+    <div className="overflow-hidden min-h-screen flex flex-col items-center justify-center relative">
+    <GradientBackgroundFuller />
 
-          {/* 🔹 Auth Form */}
-          <form className="w-80 p-4 border rounded-lg shadow-md" onSubmit={handleAuth}>
-            <input 
-              type="email" 
-              placeholder="Email" 
-              className="w-full p-2 mb-3 border rounded" 
-              required 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input 
-              type="password" 
-              placeholder="Password" 
-              className="w-full p-2 mb-3 border rounded" 
-              required 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+    {/* Content Wrapper */}
+    <div className="flex flex-col items-center px-6 flex-grow justify-center">
+      <h1 className="text-5xl font-semibold mb-6 text-center drop-shadow-[0_0_8px_rgba(138,43,226,0.6)]">
+        {isLogin ? "Enter Parable." : "Join Parable."}
+      </h1>
 
-            {/* 🔹 Show error message if auth fails */}
-            {error && <p className="text-red-500 text-sm mb-3">{error}. Please check your inbox.</p>}
+      {/* 🔹 Auth Form */}
+      <form className="w-full max-w-sm p-4 border rounded-lg shadow-md" onSubmit={handleAuth}>
+        <input 
+          type="email" 
+          placeholder="Email" 
+          className="w-full p-2 mb-3 border rounded" 
+          required 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          className="w-full p-2 mb-3 border rounded" 
+          required 
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-            <button 
-              className="w-full p-2 from-[#6a5acd] via-[#5f4b8b] to-[#4682b4] bg-gradient-to-r text-white rounded cursor-pointer">
-              {isLogin ? "Login" : "Sign Up"}
-            </button>
-          </form>
+        {/* 🔹 Show error message if auth fails */}
+        {error && <p className="text-red-500 text-sm mb-3">{error}. Please check your inbox.</p>}
 
-          {/* 🔹 Toggle Login/Signup */}
-          <button 
-            className="mt-4 text-indigo-300 cursor-pointer" 
-            onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? "New here? Sign up" : "Already have an account? Login"}
-          </button>
-        </div>
-      </div>
+        <button 
+          className="w-full p-2 from-[#6a5acd] via-[#5f4b8b] to-[#4682b4] bg-gradient-to-r text-white rounded cursor-pointer">
+          {isLogin ? "Login" : "Sign Up"}
+        </button>
+      </form>
+
+      {/* 🔹 Toggle Login/Signup */}
+      <button 
+        className="mt-4 text-indigo-300 cursor-pointer" 
+        onClick={() => setIsLogin(!isLogin)}>
+        {isLogin ? "New here? Sign up" : "Already have an account? Login"}
+      </button>
     </div>
+
+    {/* 🔹 Footer (positioned at bottom but does NOT break centering) */}
+    <div className="pb-4 text-white/20 text-sm font-light opacity-75">
+      <p>© 2025 Parable - A Multilingual Community. All rights reserved.</p>
+    </div>
+  </div>
+
+
   );
 }
 

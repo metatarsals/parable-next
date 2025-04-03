@@ -49,8 +49,7 @@ export default function Story() {
                 {stories.map((story, index) => (
                     <TextReveal
                         key={index}
-                        className="p-4 w-full max-w-2xl text-center rounded-lg"
-                        style={{ color: index % 2 === 0 ? "#a855f7" : "#6366f1" }} // Hex for purple-500 & indigo-500
+                        className="p-4 w-full text-center rounded-lg"
                     >
                         {story}
                     </TextReveal>

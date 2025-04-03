@@ -59,7 +59,7 @@ export default function Dictionary() {
                         >
                             {/* Language Badge - Positioned Top Right */}
                             <div className="absolute top-2 right-2 px-2 py-1 text-sm">
-                            <p className="text-gray-700 dark:text-gray-300 italic">{word.language_code}</p>
+                            <p className="text-gray-700 dark:text-gray-300 italic">{word.language_code.toUpperCase()}</p>
                             </div>
                         
                             {/* Word with Gradient Text */}

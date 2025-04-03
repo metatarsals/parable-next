@@ -85,7 +85,7 @@ export default function Dictionary() {
                     </p>
                     <button 
                         className="mt-4 px-6 py-3 text-lg font-thin bg-gradient-to-r from-[#6a5acd] via-[#5f4b8b] to-[#4682b4] text-white rounded-xl cursor-pointer"
-                        onClick={() => window.location.href = "/add-word"}
+                        onClick={() => window.location.href = "/auth"}
                     >
                         Add a Word
                     </button>

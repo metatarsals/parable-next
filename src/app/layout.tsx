@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {DM_Sans, Playfair_Display} from "next/font/google";
+import {DM_Sans} from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -7,10 +7,6 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const playFair = Playfair_Display({
-  variable: "--font-playfair",
-  weight: "400"
-});
 
 export const metadata: Metadata = {
   title: "Parable.",
@@ -25,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-       className={`${dmSans.variable} ${playFair.variable} antialiased tracking-tight`}
+       className={`${dmSans.variable} antialiased tracking-tight`}
       >
         {children}
       </body>

@@ -65,7 +65,7 @@ export default function AuthPage() {
             />
 
             {/* 🔹 Show error message if auth fails */}
-            {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
+            {error && <p className="text-red-500 text-sm mb-3">{error}. Please check your inbox.</p>}
 
             <button 
               className="w-full p-2 from-[#6a5acd] via-[#5f4b8b] to-[#4682b4] bg-gradient-to-r text-white rounded cursor-pointer">

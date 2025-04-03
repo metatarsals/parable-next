@@ -16,10 +16,6 @@ export default function AuthPage() {
       <form className="w-80 p-4 border rounded-lg shadow-md">
         <input type="email" placeholder="Email" className="w-full p-2 mb-3 border rounded" required />
         <input type="password" placeholder="Password" className="w-full p-2 mb-3 border rounded" required />
-{/* 
-        {!isLogin && (
-          <input type="text" placeholder="Username" className="w-full p-2 mb-3 border rounded" required />
-        )} */}
 
         <button className="w-full p-2 from-[#6a5acd] via-[#5f4b8b] to-[#4682b4] bg-gradient-to-r text-white rounded cursor-pointer">{isLogin ? "Login" : "Sign Up"}</button>
       </form>

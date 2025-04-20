@@ -70,7 +70,7 @@ export default function Dictionary() {
                             </h3>
                         
                             <p className="mt-2 text-gray-600 dark:text-gray-400">{word.meaning}</p>
-                            <p className="mt-2 text-gray-500 dark:text-gray-400">Example: <em>"{word.example_usage}"</em></p>
+                            <p className="mt-2 text-gray-500 dark:text-gray-400">Example: <em>&quot;{word.example_usage}&quot;</em></p>
                         </div>                        
                         ))}
                     </div>

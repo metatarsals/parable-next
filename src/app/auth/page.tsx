@@ -29,11 +29,14 @@ export default function AuthPage() {
 
       if (result.error) throw result.error; // Handle errors
 
-      // 🔹 Redirect to home/dashboard after successful auth
       router.push("/upload");
-    } catch (err: any) {
-      setError(err.message || "Something went wrong.");
-    }
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Something went wrong.");
+      }
+    }    
   };
 
   return (

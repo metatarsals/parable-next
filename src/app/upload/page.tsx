@@ -22,7 +22,7 @@ export default function UploadPage() {
     // Fetch the logged-in user ID
     useEffect(() => {
         const fetchUser = async () => {
-            const { data, error } = await supabase.auth.getUser();
+            const { data} = await supabase.auth.getUser();
             if (data?.user) setUserId(data.user.id);
         };
         fetchUser();

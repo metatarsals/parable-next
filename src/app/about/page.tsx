@@ -1,4 +1,3 @@
-import GradientBackground from "@/components/gradbg";
 import GradientBackgroundFuller from "@/components/gradbg-fuller";
 import CentralNavbar from "@/components/navigate";
 

@@ -42,13 +42,12 @@ export default function Story() {
         fetchStory();
     }, []);
 
-    // Function to handle translation and update UI instantly
     const handleTranslation = async () => {
         if (!stories.length) return;
 
         console.log("Translating page to:", selectedLanguage);
 
-        const translatedStories: string[] = [...stories]; // Copy original stories
+        const translatedStories: string[] = [...stories];
 
         for (let i = 0; i < stories.length; i++) {
             try {
@@ -61,7 +60,6 @@ export default function Story() {
 
                 translatedStories[i] = data.translation || "[Translation failed]";
 
-                // ✅ Instantly update UI after each translation
                 setStories([...translatedStories]);
 
             } catch (error) {
